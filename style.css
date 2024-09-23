@@ -104,36 +104,62 @@ html::-webkit-scrollbar-thumb{
 
 .home {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: url(Portfolio/22.jpeg) no-repeat;
+    /* align-items: center; */
+    background: url(Portfolio/22.jpeg) no-repeat,
+                url(Portfolio/23.jpeg) no-repeat,
+                url(Portfolio/24.jpeg) no-repeat,
+                url(Portfolio/25.jpeg) no-repeat;
     background-size: cover;
     background-position: center center;
+    animation: scrollBackground 8s infinite; 
 }
-.home .homeContent{
-    width: 50%;
+
+@keyframes scrollBackground {
+    0% {
+        background-image: url(Portfolio/22.jpeg);
+    }
+    25% {
+        background-image: url(Portfolio/23.jpeg);
+    }
+    50% {
+        background-image: url(Portfolio/24.jpeg);
+    }
+    75% {
+        background-image: url(Portfolio/25.jpeg);
+    }
+    100% {
+        background-image: url(Portfolio/22.jpeg);
+    }
+}
+
+.homeContent{
+    width: 100%;
     float: left;
     text-align: center;
     padding: 4rem;
-}
-.home .homeContent h2{
-    font-size: 7rem;
-    font-weight: bolder;
     margin-bottom: 2rem;
-    line-height: 7rem;
+    background-color: #fff;
+
+}
+.homeContent h2{
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 4rem;
     color: var(--black);
     text-shadow: var(--box-shadow);
 }
-.home .homeContent p{
+
+.homeContent p{
     font-size: 1.8rem;
     color: var(--black);
     line-height: 2;
     margin-bottom: 2rem;
 }
-.home .homeContent .home-btn{
+.homeContent .home-btn{
     height: 3rem;
 }
-.home .homeContent .home-btn button{
+.homeContent .home-btn button{
     font-size: 1.8rem;
     background-color: var(--black);
     color: var(--white);
